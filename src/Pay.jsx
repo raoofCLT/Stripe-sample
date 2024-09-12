@@ -2,9 +2,9 @@ import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import dotenv from "dotenv"
 
-dotenv.config();
+
+const KEY = process.env.REACT_APP_STRIPE_KEY
 
 const Pay = () => {
   const [stripeToken,setStripeToken] = useState(null)
@@ -17,20 +17,22 @@ const Pay = () => {
    useEffect(()=>{
      const makeRequest = async () =>{
        try{
+         
          const res = await axios.post(
-           "http://localhost:3000/api/checkout/payment",
-         {
-           tokenId: stripeToken.id,
-           amount: 2000,
-         })
+           "http://localhost:5000/api/checkout/payment",
+           {
+             tokenId: stripeToken.id,
+             amount: 2000,
+            })
          console.log(res.data);
-         navigate.push("/success")
+         navigate("/success")
        }catch(err){
-         console.log(err);
+         console.log(`Your error is ${err}`);
        }
      }
      stripeToken && makeRequest()
    },[stripeToken,navigate])
+
 
     return(
         <div
@@ -45,14 +47,14 @@ const Pay = () => {
             <span>Processing. Please wait...</span>) : (
 
             <StripeCheckout 
-            name= "Lama Shop" 
-            image="https://scontent.fccj3-1.fna.fbcdn.net/v/t39.30808-1/308746580_213237637704265_8391728342110064021_n.png?stp=dst-png_s200x200&_nc_cat=102&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=wlTUq-xwy5cQ7kNvgF_QRWY&_nc_ht=scontent.fccj3-1.fna&oh=00_AYBQ9bQFJETDzuiOvYZ6Z0gKKpJzG_zCJg4Ar7on13DKWg&oe=66E1C472"
+            name= "Yara" 
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7IZMRqXYifzEbxPBggvkYO9MmJrOltETmlg&s"
             billingAddress
             shippingAddress
             description="Your total is &20"
             amount={2000}
             token={onToken}
-            stripeKey={process.env.KEY}
+            stripeKey={KEY}
             >
             <button
               style={{

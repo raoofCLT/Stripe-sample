@@ -7,12 +7,6 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                {/* <Route path="/pay" >
-                    <Pay />
-                </Route>
-                <Route path="/success">
-                    <Success />
-                </Route> */}
                 <Route path="/pay" element={<Pay />} />
                 <Route path="/success" element={<Success />} />
             </Routes>

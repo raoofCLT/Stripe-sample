@@ -41,12 +41,12 @@ const Success = () => {
   return (
     <Container>
       <Wrapper>
-        <Styledimg src="https://scontent.fccj3-1.fna.fbcdn.net/v/t39.30808-1/308746580_213237637704265_8391728342110064021_n.png?stp=dst-png_s200x200&_nc_cat=102&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=wlTUq-xwy5cQ7kNvgF_QRWY&_nc_ht=scontent.fccj3-1.fna&oh=00_AYBQ9bQFJETDzuiOvYZ6Z0gKKpJzG_zCJg4Ar7on13DKWg&oe=66E1C472" alt="" />
+        <Styledimg src="https://img.freepik.com/free-vector/y-letter-colorful-logo-gradient-vector-designs_343694-1188.jpg?t=st=1726119366~exp=1726122966~hmac=93b8e8b0bdb37d5337bb1f6965d1fc80a596e67b76d411bddae6e012264e93c8&w=740" alt="" />
         <Done>
           Successfull.
         </Done>
         <Desc>
-          Your order is being prepared. Thanks for choosing Lama Shop.
+          Your order is being prepared. Thanks for choosing Yara.
         </Desc>
       </Wrapper>
     </Container>
